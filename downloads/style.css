@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 32px;
+    text-align: center;
+}
+
+h1 {
+    color: #2a7ae2;
+}
+
+.download-link {
+    display: block;
+    margin: 18px 0;
+    padding: 12px;
+    background: #2a7ae2;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.download-link:hover {
+    background: #185a9d;
+}
+
+.info {
+    color: #555;
+    margin-top: 18px;
+}
+
+ul {
+    text-align: left;
+    padding-left: 20px;
+}
