@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Téléchargement de l'application mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="./logo.png" alt="Logo Hymnes Adventistes RDC" style="width:64px;height:64px;margin-bottom:12px;">
+        <h1>Hymnes Adventistes RDC</h1>
+        <h2 style="color:#1976d2;font-size:1.2em;font-weight:400;margin-top:0;margin-bottom:18px;">Toute la louange
+            adventiste dans votre poche</h2>
+        <section style="margin-bottom:22px;">
+            <h3 style="color:#ffd600;margin-bottom:8px;">À propos de l'application</h3>
+            <p style="margin:0 0 8px 0;">L’application <b>Hymnes Adventistes RDC</b> vous permet d’accéder à
+                l’intégralité des cantiques adventistes du 7e jour, avec ou sans connexion internet. Retrouvez les
+                paroles, partitions, et outils pour l’animation des cultes partout en RDC et dans la diaspora.</p>
+        </section>
+
+        <section style="margin-bottom:22px;">
+            <h3 style="color:#ffd600;margin-bottom:8px;">Fonctionnalités</h3>
+            <ul>
+                <li>Accès à tous les hymnes adventistes (textes et partitions)</li>
+                <li>Recherche rapide par numéro, titre ou mot-clé</li>
+                <li>Mode hors-ligne (pas besoin d’internet après installation)</li>
+                <li>Favoris et historique de chants</li>
+                <li>Interface simple, adaptée à tous les âges</li>
+                <li>Partage facile des cantiques</li>
+            </ul>
+        </section>
+        <section style="margin-bottom:22px;">
+            <h3 style="color:#ffd600;margin-bottom:8px;">Téléchargement</h3>
+            <div id="download-area">
+                <p>Détection de votre appareil...</p>
+            </div>
+            <div class="info">
+                Si la détection ne fonctionne pas, choisissez la version adaptée à votre appareil&nbsp;:
+                <ul>
+                    <li><a href="./app-arm64-v8a.apk" class="download-link">Android ARM64 (arm64-v8a)</a></li>
+                    <li><a href="./app-armeabi-v7a.apk" class="download-link">Android ARM (armeabi-v7a)</a></li>
+                    <li><a href="./app-x86.apk" class="download-link">Android x86</a></li>
+                </ul>
+            </div>
+        </section>
+        <div id="stats" style="margin:28px 0 10px 0; color:#1976d2; font-size:1.05em; font-weight:500;">
+            <span id="visits">Visites : ...</span> | <span id="downloads">Téléchargements : ...</span>
+        </div>
+        <footer style="margin-top:10px;color:#888;font-size:0.95em;">
+            © 2025 Hymnes Adventistes RDC – Tous droits réservés<br>
+            Contact : <a href="mailto:support@hymnesadventistesrdc.org"
+                style="color:#1976d2;text-decoration:none;">support@hymnesadventistesrdc.org</a>
+        </footer>
+    </div>
+    <script>
+        // Les compteurs sont désactivés car ils ne sont pas fiables sans backend
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('stats').style.display = 'none';
+        });
+
+        // Détection améliorée de l'architecture Android
+        function detectAndroidArch() {
+            // 1. Vérification via User-Agent
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(ua)) {
+                if (/arm64|aarch64|armv8|armv8l/i.test(ua)) {
+                    return 'arm64-v8a';
+                } else if (/armeabi-v7a|armv7|armv7l/i.test(ua)) {
+                    return 'armeabi-v7a';
+                } else if (/armeabi/i.test(ua)) {
+                    return 'armeabi-v7a';
+                } else if (/x86_64|amd64/i.test(ua)) {
+                    return 'x86_64';
+                } else if (/x86/i.test(ua)) {
+                    return 'x86';
+                }
+                // 2. Vérification via navigator.userAgentData (si disponible)
+                if (navigator.userAgentData && navigator.userAgentData.architecture) {
+                    const arch = navigator.userAgentData.architecture;
+                    if (arch === 'arm64') return 'arm64-v8a';
+                    if (arch === 'arm') return 'armeabi-v7a';
+                    if (arch === 'x86-64') return 'x86_64';
+                    if (arch === 'x86') return 'x86';
+                }
+                // 3. Fallback : ARM par défaut sur Android
+                return 'armeabi-v7a';
+            }
+            return null;
+        }
+
+        window.onload = function () {
+            const arch = detectAndroidArch();
+            const area = document.getElementById('download-area');
+            if (arch === 'arm64-v8a') {
+                area.innerHTML = '<a href="./app-arm64-v8a.apk" class="download-link">Télécharger pour Android ARM64 (arm64-v8a)</a>';
+            } else if (arch === 'armeabi-v7a') {
+                area.innerHTML = '<a href="./app-armeabi-v7a.apk" class="download-link">Télécharger pour Android ARM (armeabi-v7a)</a>';
+            } else if (arch === 'x86_64') {
+                area.innerHTML = '<a href="./app-x86.apk" class="download-link">Télécharger pour Android x86_64</a>';
+            } else if (arch === 'x86') {
+                area.innerHTML = '<a href="./app-x86.apk" class="download-link">Télécharger pour Android x86</a>';
+            } else if (arch === null) {
+                area.innerHTML = '<p>Votre appareil ne semble pas être sous Android. Téléchargement non disponible.</p>';
+            } else {
+                area.innerHTML = '<p>Architecture non détectée. Veuillez choisir la version adaptée ci-dessous.</p>';
+            }
+        }
+    </script>
+</body>
+
+</html>
