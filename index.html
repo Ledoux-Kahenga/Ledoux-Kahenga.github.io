@@ -10,12 +10,13 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#11998e',   // Vert principal
-                        secondary: '#38ef7d', // Vert secondaire
-                        accent: '#ffd600',    // Jaune vif
-                        dark: '#22223b',
-                        light: '#f1faee',
-                        muted: '#8ecae6',
+                        primary: '#ff005d',    // Rose fluo
+                        secondary: '#00fff7',  // Cyan fluo
+                        accent: '#fffc00',     // Jaune fluo
+                        dark: '#1e003a',       // Violet très foncé
+                        light: '#fff2fb',      // Rose pâle
+                        text: '#0e0124',       // Bleu nuit
+                        muted: '#d8e1ff',      // Bleu pâle
                     },
                     fontFamily: {
                         sans: ['Inter', 'ui-sans-serif', 'system-ui']
@@ -30,31 +31,39 @@
             font-family: 'Inter', system-ui, sans-serif;
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            background: linear-gradient(127deg, #ff005d 0%, #00fff7 80%, #fffc00 100%);
+            min-height: 100vh;
         }
         .glass {
-            background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(6px);
-            border-radius: 1rem;
-            box-shadow: 0 6px 32px 0 rgba(0,0,0,0.12);
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 1.25rem;
+            box-shadow: 0 6px 32px 0 rgba(0,0,0,0.22);
         }
         .glass-dark {
-            background: rgba(34,34,59,0.7);
+            background: rgba(30,0,58,0.85);
         }
         .btn-gradient {
-            background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+            background: linear-gradient(90deg, #ff005d 0%, #00fff7 100%);
         }
         .btn-gradient:hover {
-            background: linear-gradient(90deg, #38ef7d 0%, #11998e 100%);
+            background: linear-gradient(90deg, #fffc00 0%, #ff005d 100%);
+            color: #1e003a !important;
+        }
+        .funky-shadow {
+            box-shadow: 0 0 0 4px #fffc00, 0 8px 32px 2px #ff005d55;
+        }
+        .funky-glow {
+            box-shadow: 0 0 16px 6px #00fff777, 0 1px 8px #ff005d33;
         }
     </style>
 </head>
-<body class="gradient-bg min-h-screen text-gray-900 dark:text-gray-100 transition-colors duration-500">
+<body class="gradient-bg min-h-screen text-text dark:text-light transition-colors duration-500">
     <div class="container mx-auto px-4 py-10 max-w-2xl">
         <!-- Logo et titre principal -->
-        <div class="glass dark:glass-dark text-center mb-8 p-6 shadow-xl">
-            <div class="w-20 h-20 mx-auto mb-4 bg-primary flex items-center justify-center rounded-full shadow-lg">
-                <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <div class="glass dark:glass-dark text-center mb-8 p-8 funky-shadow">
+            <div class="w-24 h-24 mx-auto mb-4 bg-primary flex items-center justify-center rounded-full funky-glow">
+                <svg class="w-14 h-14 text-light" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                 </svg>
             </div>
@@ -67,7 +76,7 @@
         <!-- À propos de l'application -->
         <section class="glass dark:glass-dark mb-8 p-6 shadow">
             <h3 class="text-accent text-lg font-semibold mb-3 uppercase tracking-wide">À propos de l'application</h3>
-            <p class="text-gray-700 dark:text-gray-100 leading-relaxed">
+            <p class="text-text dark:text-light leading-relaxed">
                 L'application <strong>Hymnes Adventistes RDC</strong> vous permet d'accéder à l'intégralité des cantiques adventistes du 7e jour, avec ou sans connexion internet. Retrouvez les paroles, partitions, et outils pour l'animation des cultes partout en RDC et dans la diaspora.
             </p>
         </section>
@@ -75,29 +84,29 @@
         <!-- Fonctionnalités -->
         <section class="glass dark:glass-dark mb-8 p-6 shadow">
             <h3 class="text-accent text-lg font-semibold mb-3 uppercase tracking-wide">Fonctionnalités</h3>
-            <ul class="grid gap-2 text-gray-900 dark:text-gray-100">
+            <ul class="grid gap-2 text-text dark:text-light">
                 <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
+                    <span class="inline-block w-3 h-3 bg-primary rounded-full animate-pulse"></span>
                     <span>Accès à tous les hymnes adventistes (textes et partitions)</span>
                 </li>
                 <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
+                    <span class="inline-block w-3 h-3 bg-secondary rounded-full animate-bounce"></span>
                     <span>Recherche rapide par numéro, titre ou mot-clé</span>
                 </li>
                 <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
+                    <span class="inline-block w-3 h-3 bg-accent rounded-full animate-pulse"></span>
                     <span>Mode hors-ligne (pas besoin d'internet après installation)</span>
                 </li>
                 <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
+                    <span class="inline-block w-3 h-3 bg-primary rounded-full animate-bounce"></span>
                     <span>Favoris et historique de chants</span>
                 </li>
                 <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
+                    <span class="inline-block w-3 h-3 bg-secondary rounded-full animate-pulse"></span>
                     <span>Interface simple, adaptée à tous les âges</span>
                 </li>
                 <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
+                    <span class="inline-block w-3 h-3 bg-accent rounded-full animate-bounce"></span>
                     <span>Partage facile des cantiques</span>
                 </li>
             </ul>
@@ -108,41 +117,41 @@
             <h3 class="text-accent text-lg font-semibold mb-3 uppercase tracking-wide">Téléchargement</h3>
             
             <!-- Zone de détection automatique -->
-            <div id="download-area" class="mb-4 p-4 bg-light dark:bg-dark rounded-lg text-center shadow">
+            <div id="download-area" class="mb-4 p-4 bg-light dark:bg-dark rounded-lg text-center funky-shadow">
                 <div class="flex items-center justify-center space-x-2">
                     <svg class="animate-spin h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span class="text-gray-600 dark:text-gray-400">Détection de votre appareil...</span>
+                    <span class="text-primary font-bold">Détection de votre appareil...</span>
                 </div>
             </div>
 
             <!-- Téléchargements manuels -->
-            <div class="bg-muted/40 dark:bg-dark border border-primary/30 dark:border-primary/40 rounded-lg p-4">
-                <p class="text-sm text-gray-900 dark:text-gray-100 mb-3">
+            <div class="bg-muted/40 dark:bg-dark border border-accent/40 dark:border-accent/50 rounded-lg p-4 funky-glow">
+                <p class="text-sm text-text dark:text-light mb-3">
                     Si la détection ne fonctionne pas, choisissez la version adaptée à votre appareil :
                 </p>
                 <ul class="space-y-2">
                     <li>
-                        <a href="./app-arm64-v8a.apk" class="download-link btn-gradient inline-flex items-center px-4 py-2 text-white rounded-lg shadow transition-all duration-200 text-sm font-semibold">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="./app-arm64-v8a.apk" class="download-link btn-gradient inline-flex items-center px-4 py-2 text-dark rounded-lg shadow transition-all duration-200 text-sm font-extrabold border-2 border-accent hover:scale-105">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                             </svg>
                             Android ARM64 (arm64-v8a)
                         </a>
                     </li>
                     <li>
-                        <a href="./app-armeabi-v7a.apk" class="download-link btn-gradient inline-flex items-center px-4 py-2 text-white rounded-lg shadow transition-all duration-200 text-sm font-semibold">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="./app-armeabi-v7a.apk" class="download-link btn-gradient inline-flex items-center px-4 py-2 text-dark rounded-lg shadow transition-all duration-200 text-sm font-extrabold border-2 border-secondary hover:scale-105">
+                            <svg class="w-4 h-4 mr-2 text-secondary" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                             </svg>
                             Android ARM (armeabi-v7a)
                         </a>
                     </li>
                     <li>
-                        <a href="./app-x86.apk" class="download-link btn-gradient inline-flex items-center px-4 py-2 text-white rounded-lg shadow transition-all duration-200 text-sm font-semibold">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="./app-x86.apk" class="download-link btn-gradient inline-flex items-center px-4 py-2 text-dark rounded-lg shadow transition-all duration-200 text-sm font-extrabold border-2 border-primary hover:scale-105">
+                            <svg class="w-4 h-4 mr-2 text-primary" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                             </svg>
                             Android x86
@@ -153,17 +162,17 @@
         </section>
 
         <!-- Statistiques -->
-        <div id="stats" class="glass dark:glass-dark text-center py-4 border-t border-primary/20 dark:border-primary/40 mb-6 shadow">
-            <div class="flex justify-center items-center space-x-4 text-primary font-medium">
+        <div id="stats" class="glass dark:glass-dark text-center py-4 border-t border-accent/40 dark:border-accent/60 mb-6 shadow funky-shadow">
+            <div class="flex justify-center items-center space-x-4 text-primary font-bold">
                 <span id="visits" class="flex items-center">
-                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 mr-1 text-accent" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
                     </svg>
                     Visites : ...
                 </span>
-                <span class="text-gray-400">|</span>
+                <span class="text-secondary">|</span>
                 <span id="downloads" class="flex items-center">
-                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 mr-1 text-secondary" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                     </svg>
                     Téléchargements : ...
@@ -172,12 +181,12 @@
         </div>
 
         <!-- Footer -->
-        <footer class="text-center text-sm text-gray-600 dark:text-gray-300 space-y-2 mt-8">
+        <footer class="text-center text-sm text-dark dark:text-light space-y-2 mt-8">
             <p>© 2025 Hymnes Adventistes RDC -- Tous droits réservés</p>
             <p>
                 Contact : 
                 <a href="mailto:support@hymnesadventistesrdc.org" 
-                   class="text-primary hover:text-secondary transition-colors duration-200 underline-offset-2 hover:underline">
+                   class="text-primary hover:text-secondary transition-colors duration-200 underline-offset-2 hover:underline font-bold">
                     support@hymnesadventistesrdc.org
                 </a>
             </p>
@@ -249,13 +258,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Mettre à jour les statistiques
             document.getElementById('visits').innerHTML = `
-                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-1 text-accent" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
                 </svg>
                 Visites : ${getRandomInt(1200, 3500).toLocaleString()}
             `;
             document.getElementById('downloads').innerHTML = `
-                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-1 text-secondary" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                 </svg>
                 Téléchargements : ${getRandomInt(300, 1200).toLocaleString()}
@@ -268,8 +277,8 @@
                 
                 if (arch === 'arm64-v8a') {
                     area.innerHTML = `
-                        <a href="./app-arm64-v8a.apk" class="download-link btn-gradient inline-flex items-center px-6 py-3 text-white rounded-lg shadow transition-all duration-200 text-lg font-semibold">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="./app-arm64-v8a.apk" class="download-link btn-gradient inline-flex items-center px-6 py-3 text-dark rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-accent hover:scale-105">
+                            <svg class="w-5 h-5 mr-2 text-accent" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                             </svg>
                             Télécharger pour Android ARM64
@@ -277,8 +286,8 @@
                     `;
                 } else if (arch === 'armeabi-v7a') {
                     area.innerHTML = `
-                        <a href="./app-armeabi-v7a.apk" class="download-link btn-gradient inline-flex items-center px-6 py-3 text-white rounded-lg shadow transition-all duration-200 text-lg font-semibold">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="./app-armeabi-v7a.apk" class="download-link btn-gradient inline-flex items-center px-6 py-3 text-dark rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-secondary hover:scale-105">
+                            <svg class="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                             </svg>
                             Télécharger pour Android ARM
@@ -286,8 +295,8 @@
                     `;
                 } else if (arch === 'x86_64') {
                     area.innerHTML = `
-                        <a href="./app-x86.apk" class="download-link btn-gradient inline-flex items-center px-6 py-3 text-white rounded-lg shadow transition-all duration-200 text-lg font-semibold">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="./app-x86.apk" class="download-link btn-gradient inline-flex items-center px-6 py-3 text-dark rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-primary hover:scale-105">
+                            <svg class="w-5 h-5 mr-2 text-primary" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                             </svg>
                             Télécharger pour Android x86_64
@@ -295,8 +304,8 @@
                     `;
                 } else if (arch === 'x86') {
                     area.innerHTML = `
-                        <a href="./app-x86.apk" class="download-link btn-gradient inline-flex items-center px-6 py-3 text-white rounded-lg shadow transition-all duration-200 text-lg font-semibold">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="./app-x86.apk" class="download-link btn-gradient inline-flex items-center px-6 py-3 text-dark rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-primary hover:scale-105">
+                            <svg class="w-5 h-5 mr-2 text-primary" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                             </svg>
                             Télécharger pour Android x86
@@ -305,19 +314,19 @@
                 } else if (arch === null) {
                     area.innerHTML = `
                         <div class="text-center p-4">
-                            <svg class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-12 h-12 mx-auto text-muted mb-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/>
                             </svg>
-                            <p class="text-gray-700 dark:text-gray-200">Votre appareil ne semble pas être sous Android.<br>Téléchargement non disponible.</p>
+                            <p class="text-text dark:text-light">Votre appareil ne semble pas être sous Android.<br>Téléchargement non disponible.</p>
                         </div>
                     `;
                 } else {
                     area.innerHTML = `
                         <div class="text-center p-4">
-                            <svg class="w-12 h-12 mx-auto text-yellow-500 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-12 h-12 mx-auto text-accent mb-2 animate-bounce" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z"/>
                             </svg>
-                            <p class="text-gray-700 dark:text-gray-200">Architecture non détectée.<br>Veuillez choisir la version adaptée ci-dessous.</p>
+                            <p class="text-text dark:text-light">Architecture non détectée.<br>Veuillez choisir la version adaptée ci-dessous.</p>
                         </div>
                     `;
                 }
