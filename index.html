@@ -174,22 +174,50 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        // Détection de l'architecture Android
+        // Algorithme amélioré de détection de l'architecture Android
         function detectAndroidArch() {
             const ua = navigator.userAgent || navigator.vendor || window.opera;
-            if (/android/i.test(ua)) {
-                if (/arm64|aarch64/i.test(ua)) {
-                    return 'arm64-v8a';
-                } else if (/armeabi|arm/i.test(ua)) {
-                    return 'armeabi-v7a';
-                } else if (/x86_64|amd64/i.test(ua)) {
-                    return 'x86_64';
-                } else if (/x86/i.test(ua)) {
-                    return 'x86';
-                }
-                return 'unknown';
+
+            // Quick exit for non-Android
+            if (!/android/i.test(ua)) return null;
+
+            // Prefer nativeHints if supported (future-proof)
+            if (navigator.userAgentData && navigator.userAgentData.architecture) {
+                // Examples: "arm", "arm64", "x86", "x86_64"
+                const arch = navigator.userAgentData.architecture.toLowerCase();
+                if (arch.includes("arm64")) return "arm64-v8a";
+                if (arch.includes("arm")) return "armeabi-v7a";
+                if (arch.includes("x86_64")) return "x86_64";
+                if (arch.includes("x86")) return "x86";
             }
-            return null;
+
+            // Heuristics for device models and build fingerprints (for newer Chrome UA)
+            if (/SM-|M200\d|Redmi|Mi\s|Pixel|MOTO|Infinix|TECNO|OPPO|Vivo|Samsung/i.test(ua)) {
+                // Try to extract Build info, e.g. 'Build/XXXX'
+                const buildMatch = ua.match(/Build\/([^\s;]+)/);
+                if (buildMatch) {
+                    const build = buildMatch[1].toLowerCase();
+                    if (build.includes("arm64") || build.includes("aarch64")) return "arm64-v8a";
+                    if (build.includes("armeabi")) return "armeabi-v7a";
+                    if (build.includes("x86_64")) return "x86_64";
+                    if (build.includes("x86")) return "x86";
+                }
+            }
+
+            // Standard UA substring checks (improved order)
+            if (/arm64|aarch64|android.*64|wow64/i.test(ua)) return "arm64-v8a";
+            if (/armeabi-v7a|armv7l|armv7|armeabi|arm/i.test(ua)) return "armeabi-v7a";
+            if (/x86_64|amd64/i.test(ua)) return "x86_64";
+            if (/i686|x86/i.test(ua)) return "x86";
+
+            // Try to guess from Google Play Store UA (rare but possible)
+            if (/Linux; Android [\d\.]+; [^;]+ Build; x86_64/i.test(ua)) return "x86_64";
+            if (/Linux; Android [\d\.]+; [^;]+ Build; x86/i.test(ua)) return "x86";
+            if (/Linux; Android [\d\.]+; [^;]+ Build; arm64/i.test(ua)) return "arm64-v8a";
+            if (/Linux; Android [\d\.]+; [^;]+ Build; armeabi/i.test(ua)) return "armeabi-v7a";
+
+            // Fallback
+            return 'unknown';
         }
 
         document.addEventListener('DOMContentLoaded', function () {
