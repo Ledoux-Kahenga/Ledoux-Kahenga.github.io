@@ -139,7 +139,9 @@
             <!-- Téléchargements manuels -->
             <div class="bg-primaryContainer border border-tertiary/30 rounded-lg p-4">
                 <p class="text-sm text-text mb-3">
-                    Choisissez la version adaptée à votre appareil :
+                    <p class="text-sm text-text mb-3">
+                        Choisissez la version adaptée à votre appareil :
+                    </p>
                 </p>
                 <ul class="space-y-2">
                     <li>
@@ -213,38 +215,6 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        // Algorithme amélioré de détection de l'architecture Android
-        function detectAndroidArch() {
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            if (!/android/i.test(ua)) return null;
-            if (navigator.userAgentData && navigator.userAgentData.architecture) {
-                const arch = navigator.userAgentData.architecture.toLowerCase();
-                if (arch.includes("arm64")) return "arm64-v8a";
-                if (arch.includes("arm")) return "armeabi-v7a";
-                if (arch.includes("x86_64")) return "x86_64";
-                if (arch.includes("x86")) return "x86";
-            }
-            if (/SM-|M200\d|Redmi|Mi\s|Pixel|MOTO|Infinix|TECNO|OPPO|Vivo|Samsung/i.test(ua)) {
-                const buildMatch = ua.match(/Build\/([^\s;]+)/);
-                if (buildMatch) {
-                    const build = buildMatch[1].toLowerCase();
-                    if (build.includes("arm64") || build.includes("aarch64")) return "arm64-v8a";
-                    if (build.includes("armeabi")) return "armeabi-v7a";
-                    if (build.includes("x86_64")) return "x86_64";
-                    if (build.includes("x86")) return "x86";
-                }
-            }
-            if (/arm64|aarch64|android.*64|wow64/i.test(ua)) return "arm64-v8a";
-            if (/armeabi-v7a|armv7l|armv7|armeabi|arm/i.test(ua)) return "armeabi-v7a";
-            if (/x86_64|amd64/i.test(ua)) return "x86_64";
-            if (/i686|x86/i.test(ua)) return "x86";
-            if (/Linux; Android [\d\.]+; [^;]+ Build; x86_64/i.test(ua)) return "x86_64";
-            if (/Linux; Android [\d\.]+; [^;]+ Build; x86/i.test(ua)) return "x86";
-            if (/Linux; Android [\d\.]+; [^;]+ Build; arm64/i.test(ua)) return "arm64-v8a";
-            if (/Linux; Android [\d\.]+; [^;]+ Build; armeabi/i.test(ua)) return "armeabi-v7a";
-            return 'unknown';
-        }
-
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('visits').innerHTML = `
                 <svg class="w-4 h-4 mr-1 text-secondary" fill="currentColor" viewBox="0 0 24 24">
@@ -257,59 +227,7 @@
                     <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                 </svg>
                 Téléchargements : ${getRandomInt(10000, 10000).toLocaleString()}
-            `;
-
-            setTimeout(() => {
-                const arch = detectAndroidArch();
-                const area = document.getElementById('download-area');
-                if (arch === 'arm64-v8a') {
-                    area.innerHTML = `
-                        <a href="./app-arm64-v8a.apk" class="download-link btn-main inline-flex items-center px-6 py-3 rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-tertiary">
-                            <svg class="w-5 h-5 mr-2 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                            </svg>
-                            Télécharger pour Android ARM64
-                        </a>
-                    `;
-                } else if (arch === 'armeabi-v7a') {
-                    area.innerHTML = `
-                        <a href="./app-armeabi-v7a.apk" class="download-link btn-main inline-flex items-center px-6 py-3 rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-secondary">
-                            <svg class="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                            </svg>
-                            Télécharger pour Android ARM
-                        </a>
-                    `;
-                } else if (arch === 'x86_64' || arch === 'x86') {
-                    area.innerHTML = `
-                        <a href="./app-x86.apk" class="download-link btn-main inline-flex items-center px-6 py-3 rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-primary">
-                            <svg class="w-5 h-5 mr-2 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                            </svg>
-                            Télécharger pour Android x86
-                        </a>
-                    `;
-                } else if (arch === null) {
-                    area.innerHTML = `
-                        <div class="text-center p-4">
-                            <svg class="w-12 h-12 mx-auto text-tertiary mb-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/>
-                            </svg>
-                            <p class="text-text">Votre appareil ne semble pas être sous Android.<br>Téléchargement non disponible.</p>
-                        </div>
-                    `;
-                } else {
-                    area.innerHTML = `
-                        <div class="text-center p-4">
-                            <svg class="w-12 h-12 mx-auto text-secondary mb-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z"/>
-                            </svg>
-                            <p class="text-text">Architecture non détectée.<br>Veuillez choisir la version adaptée ci-dessous.</p>
-                        </div>
-                    `;
-                }
-            }, 1000);
-        });
+            `;});
     </script>
 </body>
 </html>
