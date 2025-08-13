@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #1a237e 0%, #1976d2 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 440px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px #0002, 0 1.5px 6px #1976d2aa;
+    padding: 38px 28px 32px 28px;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    color: #1a237e;
+    font-size: 2.1em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: #1976d2;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+h3 {
+    color: #ffd600;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.download-link {
+    display: block;
+    margin: 18px 0;
+    padding: 14px 0;
+    background: linear-gradient(90deg, #1976d2 60%, #ffd600 100%);
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px #1976d255;
+    border: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.download-link:hover {
+    background: linear-gradient(90deg, #ffd600 0%, #1976d2 100%);
+    color: #1a237e;
+    box-shadow: 0 4px 16px #ffd60055;
+}
+
+.info {
+    color: #444;
+    margin-top: 22px;
+    font-size: 1em;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 16px 12px 10px 12px;
+    box-shadow: 0 1px 4px #1976d211;
+}
+
+ul {
+    text-align: left;
+    padding-left: 20px;
+    margin: 12px 0 0 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+#stats {
+    color: #1976d2;
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+footer {
+    color: #888;
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+    .container {
+        max-width: 98vw;
+        padding: 18px 2vw 18px 2vw;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    .download-link {
+        font-size: 1em;
+        padding: 12px 0;
+    }
+}
