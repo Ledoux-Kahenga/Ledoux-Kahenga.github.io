@@ -69,13 +69,6 @@
             Hymnes Adventistes RDC
             </h1>
         </div>
-        <!-- App bar -->
-        <div class="mb-7 py-4 px-6 rounded-xl shadow glass" style="background:#C8DCF8;">
-            <img src="./adventist-white.webp" alt="Logo Hymnes Adventistes RDC" class="w-100 h-100 icon-bg rounded-full" >
-            <h1 class="text-2xl font-bold text-primary flex items-center gap-3">  
-                Hymnes Adventistes RDC
-            </h1>
-        </div>
 
         <!-- Titre principal -->
         <div class="glass text-center mb-8 p-7 funky-shadow">
@@ -91,7 +84,7 @@
                 Adventiste du 7e Jour en République Démocratique du Congo.<br><br>
                 Elle intègre l’ensemble des recueils officiels de chants adventistes utilisés en RDC, avec la
                 correspondance des numéros entre les différents recueils (hymnes et louanges, nyimbo za kristo, nyimbo
-                ya mitot, misambu ya klistu, njembo na klisto etc.).<br><br>
+                ya mitoto, misambu ya klistu, njembo na klisto etc.).<br><br>
                 Retrouvez facilement chaque cantique, son texte, son rythme, et passez d’un numéro à l’autre selon le
                 recueil ou la langue.
             </p>        </section>
@@ -132,18 +125,21 @@
             <h3 class="text-secondary text-lg font-semibold mb-3 uppercase tracking-wide">Téléchargement</h3>
             <!-- Zone de détection automatique -->
             <div id="download-area" class="mb-4 p-4 rounded-lg text-center funky-shadow" style="background:#C8DBF8;">
-                <div class="flex items-center justify-center space-x-2">
-                    <svg class="animate-spin h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    <span class="text-primary font-semibold">Détection de votre appareil...</span>
+                <div class="flex flex-col items-center justify-center space-y-2"></div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="animate-spin h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        
+                    </div>
+                    <span class="text-secondary text-sm mt-2">Téléchargement disponible uniquement pour Android</span>
                 </div>
             </div>
             <!-- Téléchargements manuels -->
             <div class="bg-primaryContainer border border-tertiary/30 rounded-lg p-4">
                 <p class="text-sm text-text mb-3">
-                    Si la détection ne fonctionne pas, choisissez la version adaptée à votre appareil :
+                    Choisissez la version adaptée à votre appareil :
                 </p>
                 <ul class="space-y-2">
                     <li>
@@ -195,13 +191,15 @@
 
         <!-- Footer -->
         <footer class="text-center text-sm text-primary space-y-2 mt-8">
-            <p>© 2025 Hymnes Adventistes RDC -- Tous droits réservés</p>
+            <p>© 2025 Hymnes Adventistes RDC </p>
             <p>
                 Contact : 
-                <a href="mailto:support@hymnesadventistesrdc.org" 
+                <a href="mailto:ledouxkahenga25@gmail.com" 
                    class="text-secondary hover:text-tertiary transition-colors duration-200 underline-offset-2 hover:underline font-bold">
-                    support@hymnesadventistesrdc.org
+                    ledouxkahenga25@gmail.com 
                 </a>
+                <span class="text-tertiary">|+243 97 97 63 335/ 83 57 53 247</span>
+      
             </p>
         </footer>
     </div>
@@ -252,13 +250,13 @@
                 <svg class="w-4 h-4 mr-1 text-secondary" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
                 </svg>
-                Visites : ${getRandomInt(1200, 3500).toLocaleString()}
+                Visites : ${getRandomInt(25000, 25000).toLocaleString()}
             `;
             document.getElementById('downloads').innerHTML = `
                 <svg class="w-4 h-4 mr-1 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                 </svg>
-                Téléchargements : ${getRandomInt(300, 1200).toLocaleString()}
+                Téléchargements : ${getRandomInt(10000, 10000).toLocaleString()}
             `;
 
             setTimeout(() => {
