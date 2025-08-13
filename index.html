@@ -1,307 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
+    <title>Téléchargement de l'application mobile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Téléchargement de l'application mobile - Hymnes Adventistes RDC</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#00296B',
-                        primaryContainer: '#A0C2ED',
-                        secondary: '#D26900',
-                        secondaryContainer: '#FFD270',
-                        tertiary: '#5C5C95',
-                        tertiaryContainer: '#C8DBF8',
-                        appBar: '#C8DCF8',
-                        base: '#F6F8FB',
-                        text: '#23263A'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'ui-sans-serif', 'system-ui']
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: linear-gradient(135deg, #C8DCF8 0%, #A0C2ED 100%);
-            color: #23263A;
-        }
-        .glass {
-            background: rgba(255,255,255,0.82);
-            backdrop-filter: blur(8px);
-            border-radius: 1.1rem;
-            box-shadow: 0 6px 32px 0 rgba(0,41,107,0.11);
-        }
-        .btn-main {
-            background: linear-gradient(90deg, #00296B 0%, #5C5C95 100%);
-            color: #FFD270 !important;
-            font-weight: 700;
-        }
-        .btn-main:hover {
-            background: linear-gradient(90deg, #D26900 0%, #FFD270 100%);
-            color: #00296B !important;
-        }
-        .icon-bg {
-            background: #A0C2ED;
-        }
-        .funky-shadow {
-            box-shadow: 0 0 0 4px #FFD27033, 0 8px 32px 2px #00296B22;
-        }
-        .funky-glow {
-            box-shadow: 0 0 14px 5px #A0C2ED44, 0 1px 6px #5C5C9533;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body class="min-h-screen">
-    <div class="container mx-auto px-4 py-10 max-w-2xl">
-        <!-- App bar -->
-        <div class="mb-7 py-4 px-6 rounded-xl shadow glass" style="background:#C8DCF8;">
-            <h1 class="text-2xl font-bold text-primary flex items-center gap-3">
-                <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-                </svg>
-                Hymnes Adventistes RDC
-            </h1>
-        </div>
 
-        <!-- Titre principal -->
-        <div class="glass text-center mb-8 p-7 funky-shadow">
-            <h2 class="text-3xl font-extrabold mb-2 text-primary">Toute la louange adventiste dans votre poche</h2>
-            <h3 class="text-lg text-secondary font-semibold mb-2">Accès complet et hors-ligne</h3>
-        </div>
-
-        <!-- À propos de l'application -->
-        <section class="glass mb-8 p-6 shadow">
-            <h3 class="text-secondary text-lg font-semibold mb-3 uppercase tracking-wide">À propos de l'application</h3>
-            <p class="text-text leading-relaxed">
-                L'application <strong>Hymnes Adventistes RDC</strong> vous permet d'accéder à l'intégralité des cantiques adventistes du 7e jour, avec ou sans connexion internet. Retrouvez les paroles, partitions, et outils pour l'animation des cultes partout en RDC et dans la diaspora.
+<body>
+    <div class="container">
+        <img src="./adventist-white.webp" alt="Logo Hymnes Adventistes RDC" style="width:64px;height:64px;margin-bottom:12px;">
+        <h1>Hymnes Adventistes RDC</h1>
+        <h2 style="color:#1976d2;font-size:1.2em;font-weight:400;margin-top:0;margin-bottom:18px;">Toute la louange
+            adventiste dans votre poche</h2>
+        <section style="margin-bottom:22px;">
+            <h3 style="color:#ffd600;margin-bottom:8px;">À propos de l'application</h3>
+            <p style="margin:0 0 8px 0;">
+                <b>Hymnes Adventistes RDC</b> est l’application de référence pour tous les membres et amis de l’Église
+                Adventiste du 7e Jour en République Démocratique du Congo.<br><br>
+                Elle intègre l’ensemble des recueils officiels de chants adventistes utilisés en RDC, avec la
+                correspondance des numéros entre les différents recueils (hymnes et louanges, nyimbo za kristo, nyimbo
+                ya mitot, misambu ya klistu, njembo na klisto etc.).<br><br>
+                Retrouvez facilement chaque cantique, son texte, son rythme, et passez d’un numéro à l’autre selon le
+                recueil ou la langue.
             </p>
         </section>
 
-        <!-- Fonctionnalités -->
-        <section class="glass mb-8 p-6 shadow">
-            <h3 class="text-secondary text-lg font-semibold mb-3 uppercase tracking-wide">Fonctionnalités</h3>
-            <ul class="grid gap-2 text-text">
-                <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
-                    <span>Accès à tous les hymnes adventistes (textes et partitions)</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-secondary rounded-full"></span>
-                    <span>Recherche rapide par numéro, titre ou mot-clé</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-tertiary rounded-full"></span>
-                    <span>Mode hors-ligne (pas besoin d'internet après installation)</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
-                    <span>Favoris et historique de chants</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-secondary rounded-full"></span>
-                    <span>Interface simple, adaptée à tous les âges</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                    <span class="inline-block w-3 h-3 bg-tertiary rounded-full"></span>
-                    <span>Partage facile des cantiques</span>
-                </li>
+        <section style="margin-bottom:22px;">
+            <h3 style="color:#ffd600;margin-bottom:8px;">Fonctionnalités</h3>
+            <ul>
+                <li>Accès à tous les hymnes adventistes (textes et partitions)</li>
+                <li>Recherche rapide par numéro, titre ou mot-clé</li>
+                <li>Mode hors-ligne (pas besoin d’internet après installation)</li>
+                <li>Favoris</li>
+                <li>Interface simple, adaptée à tous les âges</li>
+                <li>Partage facile des cantiques</li>
             </ul>
         </section>
-
-        <!-- Téléchargement -->
-        <section class="glass mb-8 p-6 shadow">
-            <h3 class="text-secondary text-lg font-semibold mb-3 uppercase tracking-wide">Téléchargement</h3>
-            <!-- Zone de détection automatique -->
-            <div id="download-area" class="mb-4 p-4 rounded-lg text-center funky-shadow" style="background:#C8DBF8;">
-                <div class="flex items-center justify-center space-x-2">
-                    <svg class="animate-spin h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    <span class="text-primary font-semibold">Détection de votre appareil...</span>
-                </div>
-            </div>
-            <!-- Téléchargements manuels -->
-            <div class="bg-primaryContainer border border-tertiary/30 rounded-lg p-4">
-                <p class="text-sm text-text mb-3">
-                    Si la détection ne fonctionne pas, choisissez la version adaptée à votre appareil :
-                </p>
-                <ul class="space-y-2">
-                    <li>
-                        <a href="./app-arm64-v8a.apk" class="download-link btn-main inline-flex items-center px-4 py-2 rounded-lg shadow transition-all duration-200 text-sm font-semibold border-2 border-tertiary">
-                            <svg class="w-4 h-4 mr-2 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                            </svg>
-                            Android ARM64 (arm64-v8a)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./app-armeabi-v7a.apk" class="download-link btn-main inline-flex items-center px-4 py-2 rounded-lg shadow transition-all duration-200 text-sm font-semibold border-2 border-secondary">
-                            <svg class="w-4 h-4 mr-2 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                            </svg>
-                            Android ARM (armeabi-v7a)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./app-x86.apk" class="download-link btn-main inline-flex items-center px-4 py-2 rounded-lg shadow transition-all duration-200 text-sm font-semibold border-2 border-primary">
-                            <svg class="w-4 h-4 mr-2 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                            </svg>
-                            Android x86
-                        </a>
-                    </li>
+        <section style="margin-bottom:22px;">
+            <h3 style="color:#ffd600;margin-bottom:8px;">Téléchargement</h3>
+            <div id="download-area" style="display:none;"></div>
+            <div class="info">
+                Si la détection ne fonctionne pas, choisissez la version adaptée à votre appareil&nbsp;:
+                <ul>
+                    <li><a href="./app-arm64-v8a.apk" class="download-link">Android ARM64 (arm64-v8a)</a></li>
+                    <li><a href="./app-armeabi-v7a.apk" class="download-link">Android ARM (armeabi-v7a)</a></li>
+                    <li><a href="./app-x86.apk" class="download-link">Android x86</a></li>
                 </ul>
             </div>
         </section>
-
-        <!-- Statistiques -->
-        <div id="stats" class="glass text-center py-4 border-t border-primary/20 mb-6 shadow">
-            <div class="flex justify-center items-center space-x-4 text-primary font-bold">
-                <span id="visits" class="flex items-center">
-                    <svg class="w-4 h-4 mr-1 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
-                    </svg>
-                    Visites : ...
-                </span>
-                <span class="text-tertiary">|</span>
-                <span id="downloads" class="flex items-center">
-                    <svg class="w-4 h-4 mr-1 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                    </svg>
-                    Téléchargements : ...
-                </span>
-            </div>
+        <div id="stats" style="margin:28px 0 10px 0; color:#1976d2; font-size:1.05em; font-weight:500;">
+            <span id="visits">Visites : ...</span> | <span id="downloads">Téléchargements : ...</span>
         </div>
-
-        <!-- Footer -->
-        <footer class="text-center text-sm text-primary space-y-2 mt-8">
-            <p>© 2025 Hymnes Adventistes RDC -- Tous droits réservés</p>
-            <p>
-                Contact : 
-                <a href="mailto:support@hymnesadventistesrdc.org" 
-                   class="text-secondary hover:text-tertiary transition-colors duration-200 underline-offset-2 hover:underline font-bold">
-                    support@hymnesadventistesrdc.org
-                </a>
-            </p>
+        <footer style="margin-top:10px;color:#888;font-size:0.95em;">
+            © 2025 Hymnes Adventistes RDC – Tous droits réservés<br>
+            Contact : <a href="mailto:support@hymnesadventistesrdc.org"
+                style="color:#1976d2;text-decoration:none;">support@hymnesadventistesrdc.org</a>
         </footer>
     </div>
-
     <script>
-        // Mode sombre automatique selon préférence système (optionnel)
-        // document.documentElement.classList.add('dark');
-
-        // Simuler des compteurs
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        // Algorithme amélioré de détection de l'architecture Android
-        function detectAndroidArch() {
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            if (!/android/i.test(ua)) return null;
-            if (navigator.userAgentData && navigator.userAgentData.architecture) {
-                const arch = navigator.userAgentData.architecture.toLowerCase();
-                if (arch.includes("arm64")) return "arm64-v8a";
-                if (arch.includes("arm")) return "armeabi-v7a";
-                if (arch.includes("x86_64")) return "x86_64";
-                if (arch.includes("x86")) return "x86";
-            }
-            if (/SM-|M200\d|Redmi|Mi\s|Pixel|MOTO|Infinix|TECNO|OPPO|Vivo|Samsung/i.test(ua)) {
-                const buildMatch = ua.match(/Build\/([^\s;]+)/);
-                if (buildMatch) {
-                    const build = buildMatch[1].toLowerCase();
-                    if (build.includes("arm64") || build.includes("aarch64")) return "arm64-v8a";
-                    if (build.includes("armeabi")) return "armeabi-v7a";
-                    if (build.includes("x86_64")) return "x86_64";
-                    if (build.includes("x86")) return "x86";
-                }
-            }
-            if (/arm64|aarch64|android.*64|wow64/i.test(ua)) return "arm64-v8a";
-            if (/armeabi-v7a|armv7l|armv7|armeabi|arm/i.test(ua)) return "armeabi-v7a";
-            if (/x86_64|amd64/i.test(ua)) return "x86_64";
-            if (/i686|x86/i.test(ua)) return "x86";
-            if (/Linux; Android [\d\.]+; [^;]+ Build; x86_64/i.test(ua)) return "x86_64";
-            if (/Linux; Android [\d\.]+; [^;]+ Build; x86/i.test(ua)) return "x86";
-            if (/Linux; Android [\d\.]+; [^;]+ Build; arm64/i.test(ua)) return "arm64-v8a";
-            if (/Linux; Android [\d\.]+; [^;]+ Build; armeabi/i.test(ua)) return "armeabi-v7a";
-            return 'unknown';
-        }
-
+        // Les compteurs sont désactivés car ils ne sont pas fiables sans backend
         document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('visits').innerHTML = `
-                <svg class="w-4 h-4 mr-1 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
-                </svg>
-                Visites : ${getRandomInt(1200, 3500).toLocaleString()}
-            `;
-            document.getElementById('downloads').innerHTML = `
-                <svg class="w-4 h-4 mr-1 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                </svg>
-                Téléchargements : ${getRandomInt(300, 1200).toLocaleString()}
-            `;
-
-            setTimeout(() => {
-                const arch = detectAndroidArch();
-                const area = document.getElementById('download-area');
-                if (arch === 'arm64-v8a') {
-                    area.innerHTML = `
-                        <a href="./app-arm64-v8a.apk" class="download-link btn-main inline-flex items-center px-6 py-3 rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-tertiary">
-                            <svg class="w-5 h-5 mr-2 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                            </svg>
-                            Télécharger pour Android ARM64
-                        </a>
-                    `;
-                } else if (arch === 'armeabi-v7a') {
-                    area.innerHTML = `
-                        <a href="./app-armeabi-v7a.apk" class="download-link btn-main inline-flex items-center px-6 py-3 rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-secondary">
-                            <svg class="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                            </svg>
-                            Télécharger pour Android ARM
-                        </a>
-                    `;
-                } else if (arch === 'x86_64' || arch === 'x86') {
-                    area.innerHTML = `
-                        <a href="./app-x86.apk" class="download-link btn-main inline-flex items-center px-6 py-3 rounded-lg shadow transition-all duration-200 text-lg font-extrabold border-2 border-primary">
-                            <svg class="w-5 h-5 mr-2 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                            </svg>
-                            Télécharger pour Android x86
-                        </a>
-                    `;
-                } else if (arch === null) {
-                    area.innerHTML = `
-                        <div class="text-center p-4">
-                            <svg class="w-12 h-12 mx-auto text-tertiary mb-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/>
-                            </svg>
-                            <p class="text-text">Votre appareil ne semble pas être sous Android.<br>Téléchargement non disponible.</p>
-                        </div>
-                    `;
-                } else {
-                    area.innerHTML = `
-                        <div class="text-center p-4">
-                            <svg class="w-12 h-12 mx-auto text-secondary mb-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z"/>
-                            </svg>
-                            <p class="text-text">Architecture non détectée.<br>Veuillez choisir la version adaptée ci-dessous.</p>
-                        </div>
-                    `;
-                }
-            }, 1000);
+            document.getElementById('stats').style.display = 'none';
         });
+
+        // Détection améliorée de l'architecture Android
+        function detectAndroidArch() {
+            // 1. Vérification via User-Agent
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(ua)) {
+                if (/arm64|aarch64|armv8|armv8l/i.test(ua)) {
+                    return 'arm64-v8a';
+                } else if (/armeabi-v7a|armv7|armv7l/i.test(ua)) {
+                    return 'armeabi-v7a';
+                } else if (/armeabi/i.test(ua)) {
+                    return 'armeabi-v7a';
+                } else if (/x86_64|amd64/i.test(ua)) {
+                    return 'x86_64';
+                } else if (/x86/i.test(ua)) {
+                    return 'x86';
+                }
+                // 2. Vérification via navigator.userAgentData (si disponible)
+                if (navigator.userAgentData && navigator.userAgentData.architecture) {
+                    const arch = navigator.userAgentData.architecture;
+                    if (arch === 'arm64') return 'arm64-v8a';
+                    if (arch === 'arm') return 'armeabi-v7a';
+                    if (arch === 'x86-64') return 'x86_64';
+                    if (arch === 'x86') return 'x86';
+                }
+                // 3. Fallback : ARM par défaut sur Android
+                return 'armeabi-v7a';
+            }
+            return null;
+        }
+
+        window.onload = function () {
+            const arch = detectAndroidArch();
+            const area = document.getElementById('download-area');
+            if (arch === 'arm64-v8a') {
+                area.innerHTML = '<a href="./app-arm64-v8a.apk" class="download-link">Télécharger pour Android ARM64 (arm64-v8a)</a>';
+            } else if (arch === 'armeabi-v7a') {
+                area.innerHTML = '<a href="./app-armeabi-v7a.apk" class="download-link">Télécharger pour Android ARM (armeabi-v7a)</a>';
+            } else if (arch === 'x86_64') {
+                area.innerHTML = '<a href="./app-x86.apk" class="download-link">Télécharger pour Android x86_64</a>';
+            } else if (arch === 'x86') {
+                area.innerHTML = '<a href="./app-x86.apk" class="download-link">Télécharger pour Android x86</a>';
+            } else if (arch === null) {
+                area.innerHTML = '<p>Votre appareil ne semble pas être sous Android. Téléchargement non disponible.</p>';
+            } else {
+                area.innerHTML = '<p>Architecture non détectée. Veuillez choisir la version adaptée ci-dessous.</p>';
+            }
+        }
     </script>
 </body>
+
 </html>
