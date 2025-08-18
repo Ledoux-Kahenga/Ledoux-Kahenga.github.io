@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,39 +35,47 @@
             background: linear-gradient(135deg, #C8DCF8 0%, #A0C2ED 100%);
             color: #23263A;
         }
+
         .glass {
-            background: rgba(255,255,255,0.82);
+            background: rgba(255, 255, 255, 0.82);
             backdrop-filter: blur(8px);
             border-radius: 1.1rem;
-            box-shadow: 0 6px 32px 0 rgba(0,41,107,0.11);
+            box-shadow: 0 6px 32px 0 rgba(0, 41, 107, 0.11);
         }
+
         .btn-main {
             background: linear-gradient(90deg, #00296B 0%, #5C5C95 100%);
             color: #FFD270 !important;
             font-weight: 700;
         }
+
         .btn-main:hover {
             background: linear-gradient(90deg, #D26900 0%, #FFD270 100%);
             color: #00296B !important;
         }
+
         .icon-bg {
             background: #A0C2ED;
         }
+
         .funky-shadow {
             box-shadow: 0 0 0 4px #FFD27033, 0 8px 32px 2px #00296B22;
         }
+
         .funky-glow {
             box-shadow: 0 0 14px 5px #A0C2ED44, 0 1px 6px #5C5C9533;
         }
     </style>
 </head>
+
 <body class="min-h-screen">
     <div class="container mx-auto px-4 py-10 max-w-2xl">
         <!-- centre l'image et le texte -->
         <div class="flex flex-col items-center justify-center mb-7">
-            <img src="./adventist-white.webp" alt="Logo Hymnes Adventistes RDC" class="w-24 h-24 icon-bg rounded-full mb-3" >
-            <h1 class="text-2xl font-bold text-primary flex items-center gap-3">  
-            Hymnes Adventistes RDC
+            <img src="./adventist-white.webp" alt="Logo Hymnes Adventistes RDC"
+                class="w-24 h-24 icon-bg rounded-full mb-3">
+            <h1 class="text-2xl font-bold text-primary flex items-center gap-3">
+                Hymnes Adventistes RDC
             </h1>
         </div>
 
@@ -74,19 +83,24 @@
         <div class="glass text-center mb-8 p-7 funky-shadow">
             <h2 class="text-3xl font-extrabold mb-2 text-primary">Toute la louange adventiste dans votre poche</h2>
             <h3 class="text-lg text-secondary font-semibold mb-2">Accès complet et hors-ligne</h3>
+            <!-- Bouton de téléchargement clignotant -->
+            <a href="./app-release.apk"
+                class="mt-4 inline-block px-6 py-3 rounded-xl font-bold text-primary bg-secondary animate-pulse border-2 border-primary shadow-lg hover:bg-tertiary hover:text-white transition-all duration-300">
+                Télécharger l'application 📥
+            </a>
         </div>
 
         <!-- À propos de l'application -->
         <section class="glass mb-8 p-6 shadow">
             <h3 class="text-secondary text-lg font-semibold mb-3 uppercase tracking-wide">À propos de l'application</h3>
             <p class="text-text leading-relaxed" style="text-align: justify;"></p>
-                <b>Hymnes Adventistes RDC</b> est l’application de référence pour tous les membres et amis de l’Église
-                Adventiste du 7e Jour en République Démocratique du Congo.<br><br>
-                Elle intègre l’ensemble des recueils officiels de chants adventistes utilisés en RDC, avec la
-                correspondance des numéros entre les différents recueils (hymnes et louanges, nyimbo za kristo, nyimbo
-                ya mitoto, misambu ya klistu, njembo na klisto etc.).<br><br>
-                Retrouvez facilement chaque cantique, son texte, son rythme, et passez d’un numéro à l’autre selon le
-                recueil ou la langue.
+            <b>Hymnes Adventistes RDC</b> est l’application de référence pour tous les membres et amis de l’Église
+            Adventiste du 7e Jour en République Démocratique du Congo.<br><br>
+            Elle intègre l’ensemble des recueils officiels de chants adventistes utilisés en RDC, avec la
+            correspondance des numéros entre les différents recueils (hymnes et louanges, nyimbo za kristo, nyimbo
+            ya mitoto, misambu ya klistu, njembo na klisto etc.).<br><br>
+            Retrouvez facilement chaque cantique, son texte, son rythme, et passez d’un numéro à l’autre selon le
+            recueil ou la langue.
             </p>
         </section>
 
@@ -94,48 +108,58 @@
         <section class="glass mb-8 p-6 shadow">
             <h3 class="text-secondary text-lg font-semibold mb-3 uppercase tracking-wide">Fonctionnalités</h3>
             <ul class="grid gap-2 text-text">
-            <li class="flex items-center space-x-2"></li>
+                <li class="flex items-center space-x-2"></li>
                 <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
                 <span>Accès à tous les hymnes adventistes (textes et partitions)</span>
-            </li>
-            <li class="flex items-center space-x-2">
-                <span class="inline-block w-3 h-3 bg-secondary rounded-full"></span>
-                <span>Recherche rapide par numéro, titre ou mot-clé</span>
-            </li>
-            <li class="flex items-center space-x-2"></li>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <span class="inline-block w-3 h-3 bg-secondary rounded-full"></span>
+                    <span>Recherche rapide par numéro, titre ou mot-clé</span>
+                </li>
+                <li class="flex items-center space-x-2"></li>
                 <span class="inline-block w-3 h-3 bg-tertiary rounded-full"></span>
                 <span>Passage d'un chant d'un recueil X vers un chant d'un recueil Y</span>
-            </li>
-            <li class="flex items-center space-x-2">
-                <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
-                <span>Classement par catégorie</span>
-            </li>
-            <li class="flex items-center space-x-2">
-                <span class="inline-block w-3 h-3 bg-tertiary rounded-full"></span>
-                <span>Mode hors-ligne (pas besoin d'internet après installation)</span>
-            </li>
-            <li class="flex items-center space-x-2">
-                <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
-                <span>Favoris</span>
-            </li>
-            <li class="flex items-center space-x-2">
-                <span class="inline-block w-3 h-3 bg-secondary rounded-full"></span>
-                <span>Interface simple, adaptée à tous les âges</span>
-            </li>
-            <li class="flex items-center space-x-2">
-                <span class="inline-block w-3 h-3 bg-tertiary rounded-full"></span>
-                <span>Partage facile des cantiques</span>
-            </li>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
+                    <span>Classement par catégorie</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <span class="inline-block w-3 h-3 bg-tertiary rounded-full"></span>
+                    <span>Mode hors-ligne (pas besoin d'internet après installation)</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <span class="inline-block w-3 h-3 bg-primary rounded-full"></span>
+                    <span>Favoris</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <span class="inline-block w-3 h-3 bg-secondary rounded-full"></span>
+                    <span>Interface simple, adaptée à tous les âges</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <span class="inline-block w-3 h-3 bg-tertiary rounded-full"></span>
+                    <span>Partage facile des cantiques</span>
+                </li>
             </ul>
             <div class="mt-6 text-center">
-                <span class="inline-block px-4 py-2 rounded-lg font-bold text-secondary bg-primaryContainer animate-pulse" style="animation: blink 1.2s linear infinite;">
-                    ⚠️ Version BETA : Cette version est en phase d'essai. La version 1 sera disponible sur le Play Store après 3 mois d'essai et de feedback.
+                <span
+                    class="inline-block px-4 py-2 rounded-lg font-bold text-secondary bg-primaryContainer animate-pulse"
+                    style="animation: blink 1.2s linear infinite;">
+                    ⚠️ Version BETA : Cette version est en phase d'essai. La version 1 sera disponible sur le Play Store
+                    après 3 mois d'essai et de feedback.
                 </span>
             </div>
             <style>
                 @keyframes blink {
-                    0%, 100% { opacity: 1; }
-                    50% { opacity: 0.3; }
+
+                    0%,
+                    100% {
+                        opacity: 1;
+                    }
+
+                    50% {
+                        opacity: 0.3;
+                    }
                 }
             </style>
         </section>
@@ -146,67 +170,70 @@
             <!-- Zone de détection automatique -->
             <div id="download-area" class="mb-4 p-4 rounded-lg text-center funky-shadow" style="background:#C8DBF8;">
                 <div class="flex flex-col items-center justify-center space-y-2"></div>
-                    <span class="text-secondary text-sm mt-2">Téléchargement disponible uniquement pour Android</span>
-                </div>
-                 <div class="bg-primaryContainer border border-tertiary/30 rounded-lg p-4">
+                <span class="text-secondary text-sm mt-2">Téléchargement disponible uniquement pour Android</span>
+            </div>
+            <div class="bg-primaryContainer border border-tertiary/30 rounded-lg p-4">
                 <p class="text-sm text-text mb-3">
-                    <p class="text-sm text-text mb-3">
-                        Choisissez la version adaptée à votre appareil :
-                    </p>
+                <p class="text-sm text-text mb-3">
+                    Choisissez la version adaptée à votre appareil :
+                </p>
                 </p>
                 <ul class="space-y-2">
                     <li>
-                        <a href="./app-release.apk" class="download-link btn-main inline-flex items-center px-4 py-2 rounded-lg shadow transition-all duration-200 text-sm font-semibold border-2 border-tertiary">
+                        <a href="./app-release.apk"
+                            class="download-link btn-main inline-flex items-center px-4 py-2 rounded-lg shadow transition-all duration-200 text-sm font-semibold border-2 border-tertiary">
                             <svg class="w-4 h-4 mr-2 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                <path
+                                    d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
                             </svg>
                             Android
                         </a>
                     </li>
-                    
-                    
+
+
                 </ul>
             </div>
-            </div>
-            <!-- Téléchargements manuels -->
-           
-        </section>
+    </div>
+    <!-- Téléchargements manuels -->
 
-        <!-- Statistiques -->
-                 <section class="p-6">
+    </section>
+
+    <!-- Statistiques -->
+    <section class="p-6">
         <div id="stats" class="glass text-center py-4 border-t border-primary/20 mb-6 shadow">
             <div class="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-6 text-primary font-bold">
-            <span id="visits" class="flex items-center">
-                <svg class="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 24 24"></svg>
-                <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
-                </svg>
-                <span class="text-base sm:text-lg">Visites :</span>
-                <span class="ml-1">...</span>
-            </span>
-            <span class="hidden sm:inline-block text-tertiary">|</span>
-            <span id="downloads" class="flex items-center">
-                <svg class="w-5 h-5 mr-2 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                </svg>
-                <span class="text-base sm:text-lg">Téléchargements :</span>
-                <span class="ml-1">...</span>
-            </span>
+                <span id="visits" class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 24 24"></svg>
+                    <path
+                        d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
+                    </svg>
+                    <span class="text-base sm:text-lg">Visites :</span>
+                    <span class="ml-1">...</span>
+                </span>
+                <span class="hidden sm:inline-block text-tertiary">|</span>
+                <span id="downloads" class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                    </svg>
+                    <span class="text-base sm:text-lg">Téléchargements :</span>
+                    <span class="ml-1">...</span>
+                </span>
             </div>
         </div>
-        </section>
+    </section>
 
-        <!-- Footer -->
-        <footer class="text-center text-sm text-primary space-y-2 mt-8 mb-4 px-2 sm:px-0">
-            <p>© 2025 Hymnes Adventistes RDC</p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3">
+    <!-- Footer -->
+    <footer class="text-center text-sm text-primary space-y-2 mt-8 mb-4 px-2 sm:px-0">
+        <p>© 2025 Hymnes Adventistes RDC</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3">
             <span>Contact :</span>
             <a href="mailto:ledouxkahenga25@gmail.com"
-               class="text-secondary hover:text-tertiary transition-colors duration-200 underline-offset-2 hover:underline font-bold break-all">
+                class="text-secondary hover:text-tertiary transition-colors duration-200 underline-offset-2 hover:underline font-bold break-all">
                 ledouxkahenga25@gmail.com
             </a>
             <span class="text-tertiary break-all"> +243 97 97 63 335 / 83 57 53 247</span>
-            </div>
-        </footer>
+        </div>
+    </footer>
     </div>
 
     <script>
@@ -230,7 +257,9 @@
                     <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                 </svg>
                 Téléchargements : ${getRandomInt(10000, 10000).toLocaleString()}
-            `;});
+            `;
+        });
     </script>
 </body>
+
 </html>
