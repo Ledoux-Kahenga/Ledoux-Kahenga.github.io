@@ -97,10 +97,14 @@
             <span class="text-secondary text-sm mt-2">Bientôt l'application sera disponible sur App Store(iPhone) et
                 Play store(Android).</span>
             <!-- Bouton de téléchargement clignotant -->
-            <a href="./app-release.apk"
-                class="mt-4 inline-block px-6 py-3 rounded-xl font-bold text-primary bg-secondary animate-pulse border-2 border-primary shadow-lg hover:bg-tertiary hover:text-white transition-all duration-300">
-                Télécharger l'application 📥
-            </a>
+            <a href="./app-release.apk" onclick="gtag('event', 'download', {'event_category': 'app', 'event_label': 'app-release.apk'});"
+                            class="download-link btn-main inline-flex items-center px-4 py-2 rounded-lg shadow transition-all duration-200 text-sm font-semibold border-2 border-tertiary">
+                            <svg class="w-4 h-4 mr-2 text-tertiary" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                            </svg>
+                            Télécharger l'application 📥
+                        </a>
         </div>
 
         <!-- À propos de l'application -->
@@ -194,7 +198,7 @@
                     Choisissez la version adaptée à votre appareil :
                 </p>
                 </p>
-                <!-- <ul class="space-y-2">
+                <ul class="space-y-2">
                     <li>
                         <a href="./app-release.apk" onclick="gtag('event', 'download', {'event_category': 'app', 'event_label': 'app-release.apk'});"
                             class="download-link btn-main inline-flex items-center px-4 py-2 rounded-lg shadow transition-all duration-200 text-sm font-semibold border-2 border-tertiary">
@@ -207,7 +211,7 @@
                     </li>
 
 
-                </ul> -->
+                </ul>
             </div>
     </div>
     <!-- Téléchargements manuels -->
